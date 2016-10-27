@@ -1,6 +1,6 @@
 # RhodeCode integration
 
-A basic PHP binding with [RhodeCode](https://rhodecode.com/) server.
+A simple PHP binding to [RhodeCode server API](https://rhodecode.com/).
 
 ## Usage
 
@@ -19,18 +19,18 @@ $connection = new \RhodeCode\Connection([
 
 Option details:
 
-* host - domain your rhodecode server is accessible by
-* apiKey - access token generated for the user in server admin panel
-* useSSL - set to true if you want to access your server over SSL
-* port - server port. By default port equals to 80 for insecure connections, and to 443 for secure ones
+* `host` - domain your `rhodecode` server is accessible by
+* `apiKey` - access token generated for the user in server admin panel
+* `useSSL` - set to `true` if you want to access your server over `SSL`
+* `port` - server port. By default port equals to `80` for insecure connections, and to `443` for secure ones
 
 ### Class \RhodeCode\Entity\Group
 
-`\RhodeCode\Entity\Group` class represents the abstraction over the rhodecode repository group.
+`\RhodeCode\Entity\Group` class represents the abstraction over the `rhodecode repository group`.
 
 Some examples.
 
-Create new group:
+Create new `group`:
 ~~~~
 $group = new \RhodeCode\Entity\Group(['name' => 'my/new/folder', 'description' => 'My first group']);
 $group->setConnection($connection);
@@ -45,7 +45,7 @@ else
 }
 ~~~~
 
-Get group list:
+Get `group` list:
 ~~~~
 $result = \RhodeCode\Entity\Group::find([], $connection); // first argument is future-reserved
 if($result->isSuccessful())
@@ -61,7 +61,7 @@ else
 }
 ~~~~
 
-Remove group:
+Remove `group`:
 ~~~~
 $group = new \RhodeCode\Entity\Group(['name' => 'my/new/folder']);
 $group->setConnection($connection);
@@ -78,11 +78,11 @@ else
 
 ### Class \RhodeCode\Entity\Repository
 
-`\RhodeCode\Entity\Repository` class represents the abstraction over the rhodecode repository.
+`\RhodeCode\Entity\Repository` class represents the abstraction over the `rhodecode repository`.
 
 Some examples.
 
-Create new (GIT) repository:
+Create new (`GIT`) `repository`:
 ~~~~
 $repository = new \RhodeCode\Entity\Repository([
     'name' => 'my/new/folder/newrepo',
@@ -101,7 +101,7 @@ else
 }
 ~~~~
 
-Get repository list:
+Get `repository` list:
 ~~~~
 $result = \RhodeCode\Entity\Repository::find([], $connection); // first argument is future-reserved
 if($result->isSuccessful())
@@ -117,7 +117,7 @@ else
 }
 ~~~~
 
-Remove repository:
+Remove `repository`:
 ~~~~
 $repository = new \RhodeCode\Entity\Repository([
     'name' => 'my/new/folder/newrepo'
