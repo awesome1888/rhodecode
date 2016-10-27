@@ -1,6 +1,6 @@
 # RhodeCode integration
 
-A simple PHP binding to [RhodeCode server API](https://rhodecode.com/).
+A simple PHP binding to the [RhodeCode server API](https://rhodecode.com/).
 
 ## Usage
 
@@ -19,10 +19,10 @@ $connection = new \RhodeCode\Connection([
 
 Option details:
 
-* `host` - domain your `rhodecode` server is accessible by
+* `host` - domain your `rhodecode` server is accessible on
 * `apiKey` - access token generated for the user in server admin panel
 * `useSSL` - set to `true` if you want to access your server over `SSL`
-* `port` - server port. By default port equals to `80` for insecure connections, and to `443` for secure ones
+* `port` - server port. By default the port equals to `80` for insecure connections, and to `443` for secure ones
 
 ### Class \RhodeCode\Entity\Group
 
